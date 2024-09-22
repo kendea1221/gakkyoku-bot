@@ -2,6 +2,7 @@ const { REST, Routes } = require('discord.js');
 const ping = require("./commands/ping.js");
 const inviteLink = require("./commands/inviteLink.js")
 const messageTextData = require("./data/message-text-data.js");
+const help = require("./commands/help.js");
 require('dotenv').config();
 
 //. command

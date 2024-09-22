@@ -4,10 +4,11 @@ module.exports = {
     data: new EmbedBuilder()
         .setAuthor({
             name: "愛の楽曲工房 Powered by Kenshiro",
-            iconURL: "https://cdn.discordapp.com/icons/1240929590545747989/b5549872d8a70e18ddad3a17390a7598.webp?size=96",
+            iconURL: "https://cdn.discordapp.com/avatars/1009241132925984868/f9784d9164e63baaaa905a7e5f102021.webp?size=100",
         })
         .setTitle("愛の楽曲工房Botの使い方")
         .setDescription("コマンド実行ありがとうございます！まだ少ない機能ですが、使ってみてください！")
+        .setColor("#FFDC00")
         .addFields(
             {
                 name: "``/help``",
