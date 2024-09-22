@@ -5,7 +5,8 @@ const messageTextData = require("./data/message-text-data.js");
 const welcomeEmbed = require("./embeds/welcome-embeds.js");
 //. commands
 const ping = require("./commands/ping.js");
-const inviteLink = require("./commands/inviteLink.js")
+const inviteLink = require("./commands/inviteLink.js");
+const help = require("./commands/help.js");
 
 const format = require("./format.js");
 
@@ -80,6 +81,17 @@ client.on(Events.InteractionCreate, async interaction => {
                 await interaction.reply({content: messageTextData.command.commandFail, ephemeral:true});
             }
         } 
+    } else if (interaction.commandName === help.data.name) {
+        try {
+            await help.execute(interaction);
+        } catch (error) {
+            console.error(error);
+            if (interaction.replied || interaction.deferred){
+                await interaction.followUp({content: messageTextData.command.commandFail, ephemeral:true});
+            } else {
+                await interaction.reply({content: messageTextData.command.commandFail, ephemeral:true});
+            }
+        }
     }else {
         console.error(messageTextData.general.notSupport);
     }

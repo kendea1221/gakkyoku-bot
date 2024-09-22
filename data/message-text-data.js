@@ -17,6 +17,8 @@ module.exports = {
         pingTitle: "ping",
         pingDescription:"Pongと返信します！",
         inviteLinkTitle: "invite-link",
-        inviteLinkDescription:"このサーバーの招待リンクを送信します！"
+        inviteLinkDescription:"このサーバーの招待リンクを送信します！",
+        helpTitle: "help",
+        helpDescription: "このBotの使い方を送信します！"
     }
 };
