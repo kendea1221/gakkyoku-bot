@@ -1,7 +1,6 @@
 //. SlashCommand
 const { SlashCommandBuilder } = require("discord.js");
 const messageTextData = require("../data/message-text-data");
-const pingEmbed = require("../embeds/ping.js");
 const { embed } = require("../embeds/welcome-embeds.js");
 
 //. SlashCommand Setting

@@ -15,6 +15,8 @@ module.exports = {
         commandSuc: "コマンド実行に成功しました！",
         commandFail: "コマンド実行中にエラーが発生しました！",
         pingTitle: "ping",
-        pingDescription:"Pongと返信します！"
+        pingDescription:"Pongと返信します！",
+        inviteLinkTitle: "invite-link",
+        inviteLinkDescription:"このサーバーの招待リンクを送信します！"
     }
 };

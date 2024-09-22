@@ -1,9 +1,14 @@
 const { REST, Routes } = require('discord.js');
 const ping = require("./commands/ping.js");
+const inviteLink = require("./commands/inviteLink.js")
 const messageTextData = require("./data/message-text-data.js");
 require('dotenv').config();
 
-const commands = [ping.data.toJSON()];
+//. command
+const commands = [
+  ping.data.toJSON(),
+  inviteLink.data.toJSON()
+];
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
