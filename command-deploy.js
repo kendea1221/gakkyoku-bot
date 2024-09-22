@@ -7,7 +7,8 @@ require('dotenv').config();
 //. command
 const commands = [
   ping.data.toJSON(),
-  inviteLink.data.toJSON()
+  inviteLink.data.toJSON(),
+  help.data.toJSON()
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
