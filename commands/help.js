@@ -10,7 +10,8 @@ module.exports = {
         .setDescription(messageTextData.command.helpDescription),
     execute: async function(interaction) {
         await interaction.reply({
-            embeds: [helpEmbed.data]
+            embeds: [helpEmbed.data],
+            ephemeral: true
         });
     },
 };

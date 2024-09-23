@@ -9,6 +9,6 @@ module.exports = {
         .setName(messageTextData.command.pingTitle)
         .setDescription(messageTextData.command.pingDescription),
     execute: async function(interaction) {
-        await interaction.reply({"content":"Pong!!"});
+        await interaction.reply({content:"Pong!!",ephemeral: true});
     },
 };
