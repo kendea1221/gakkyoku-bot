@@ -8,6 +8,6 @@ module.exports = {
         .setName(messageTextData.command.inviteLinkTitle)
         .setDescription(messageTextData.command.inviteLinkDescription),
     execute: async function(interaction) {
-        await interaction.reply({content:"**サーバーリンク**\nシェアお願いします！\nhttps://discord.gg/xvj26Cnu37/",ephemeral: true});
+        await interaction.reply({content:"**サーバーリンク**\nシェアお願いします！\nhttps://discord.gg/xvj26Cnu37",ephemeral: true});
     },
 };
