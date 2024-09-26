@@ -64,7 +64,7 @@ async function checkRSS() {
 
     if (!lastItem || latestItem.link !== lastItem.link) {
         lastItem = latestItem;
-        channel.get(process.env.RSS_SEND_CHANNNEL_ID).send({content: format.format(rssEmbed.text), embeds: [rssEmbed.embed, latestItem.title, latestItem.link, latestItem.description, latestItem.summary, latestItem.duration, latestItem.image]});
+        channel.get(process.env.RSS_SEND_CHANNNEL_ID).send({content: rssEmbed.text, embeds: [rss.Embed.embed(lastItem.title, latestItem.link, latestItem.description, latestItem.summary, latestItem.duration, latestItem.image)]});
     }
 }
 
