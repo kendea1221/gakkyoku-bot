@@ -2,20 +2,20 @@ const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
     text: "**愛の楽曲工房が更新されました！！**",
-    embed: new EmbedBuilder()
+    embed: (title, link, desc, summary, duration, image) => new EmbedBuilder()
     .setTitle("愛の楽曲工房")
-    .setDescription("[{0}]({1})") //0=title,1=url
+    .setDescription(format.format("[{0}]({1})", title, link)) //0=title,1=url
     .setColor("#FFEF6C")
     .setThumbnail("https://cdn.discordapp.com/avatars/1009241132925984868/f9784d9164e63baaaa905a7e5f102021.webp?size=100")
     .addFields(
         {
             name: "Description",
-            value: "{2}",//2=description
+            value: desc,//2=description
             inline: true  
         },
         {
             name: "Duration",
-            value: "{3}",//3=duration
+            value: duration,//3=duration
             inline: true
         },
         {
@@ -24,6 +24,6 @@ module.exports = {
             inline: true
         }
     )
-    .setImage("{4}")//4=thumnail
+    .setImage(image)//4=thumnail
     .setFooter("愛の楽曲工房")
 }
