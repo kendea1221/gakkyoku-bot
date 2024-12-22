@@ -3,7 +3,7 @@ const format = require("../format.js")
 
 module.exports = {
     text: "**愛の楽曲工房が更新されました！！**",
-    embed: (title, link, desc = "説明なし",duration = "なし") => {
+    embed: (title, link, description = "説明なし",duration = "なし") => {
         return new EmbedBuilder()
             .setTitle("愛の楽曲工房")
             .setDescription(format.format("[{0}]({1})", title, link)) // 0=title, 1=link
@@ -12,7 +12,7 @@ module.exports = {
             .addFields(
                 {
                     name: "Description",
-                    value: desc, // 2=description
+                    value: description, // 2=description
                     inline: true
                 },
                 {
