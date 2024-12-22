@@ -5,11 +5,12 @@ const parser = new Parser();
 const messageTextData = require("./data/message-text-data.js");
 //. embeds
 const welcomeEmbed = require("./embeds/welcome-embeds.js");
-const rssEmbed = require("./embeds/help.js");
+const rssEmbed = require("./embeds/rss.js");
 //. commands
 const ping = require("./commands/ping.js");
 const inviteLink = require("./commands/inviteLink.js");
 const help = require("./commands/help.js");
+const latest = require("./commands/latest.js")
 
 const format = require("./format.js");
 
@@ -47,7 +48,7 @@ client.once(Events.ClientReady, c => {
     
     console.log(format.format(messageTextData.general.boot, c.user.tag));
     console.log(format.format(messageTextData.general.statusMessage, "愛の楽曲工房"));
-    client.channels.cache.get(process.env.BOT_LOG_CHANNNEL_ID).send({content: format.format(messageTextData.general.bootMessage, "<@965875014232588318> \n ⚡️ 愛の楽曲工房BOT")});  
+    client.channels.cache.get(process.env.BOT_LOG_CHANNNEL_ID).send({content: format.format(messageTextData.general.bootMessage, "⚡️ 愛の楽曲工房BOT")});  
     setInterval(checkRSS, 60000);
 });
 
@@ -64,7 +65,19 @@ async function checkRSS() {
 
     if (!lastItem || latestItem.link !== lastItem.link) {
         lastItem = latestItem;
-        channel.get(process.env.RSS_SEND_CHANNNEL_ID).send({content: rssEmbed.text, embeds: [rss.Embed.embed(lastItem.title, latestItem.link, latestItem.description, latestItem.summary, latestItem.duration, latestItem.image)]});
+
+        // RSSのデータを引数として渡す
+        channel.get(process.env.RSS_SEND_CHANNNEL_ID).send({
+            content: rssEmbed.text,
+            embeds: [rssEmbed.embed(
+                latestItem.title,
+                latestItem.link,
+                latestItem.description,
+                latestItem.summary,
+                latestItem.duration,
+                latestItem.image
+            )]
+        });
     }
 }
 
@@ -106,7 +119,7 @@ client.on(Events.InteractionCreate, async interaction => {
                 await interaction.reply({content: messageTextData.command.commandFail, ephemeral:true});
             }
         }
-    }else {
+    } else {
         console.error(messageTextData.general.notSupport);
     }
 });
