@@ -61,6 +61,7 @@ client.on(Events.GuildMemberAdd, member => {
 async function checkRSS() {
     const feed = await parser.parseURL(process.env.PODCAST_RSS);
     const latestItem = feed.items[0];
+    let lasteItem = null;
 
     if (!lastItem || latestItem.link !== lastItem.link) {
         lastItem = latestItem;
