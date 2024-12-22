@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
+const format = require("../format.js")
 
 module.exports = {
     text: "**愛の楽曲工房が更新されました！！**",
