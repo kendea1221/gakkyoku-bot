@@ -3,7 +3,7 @@ const format = require("../format.js")
 
 module.exports = {
     text: "**愛の楽曲工房が更新されました！！**",
-    embed: (title, link, desc = "説明なし", summary = "サマリーなし", duration = "不明", image = null) => {
+    embed: (title, link, desc = "説明なし",duration = "なし") => {
         return new EmbedBuilder()
             .setTitle("愛の楽曲工房")
             .setDescription(format.format("[{0}]({1})", title, link)) // 0=title, 1=link
@@ -12,12 +12,12 @@ module.exports = {
             .addFields(
                 {
                     name: "Description",
-                    value: desc || "説明なし", // 2=description
+                    value: desc, // 2=description
                     inline: true
                 },
                 {
                     name: "Duration",
-                    value: duration || "不明", // 3=duration
+                    value: duration,
                     inline: true
                 },
                 {
@@ -26,7 +26,6 @@ module.exports = {
                     inline: true
                 }
             )
-            .setImage(image || "https://via.placeholder.com/150") // 4=thumbnail
             .setFooter({ text: "愛の楽曲工房" });
     }
 };

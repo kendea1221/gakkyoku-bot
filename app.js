@@ -63,6 +63,7 @@ let lastItem = null;  // グローバルに lastItem を宣言して、関数間
 async function checkRSS() {
     const feed = await parser.parseURL(process.env.PODCAST_RSS);
     const latestItem = feed.items[0];  // 最新のアイテム
+    const itunesDuration = latestItem['itunes:duration'];
 
     if (!lastItem || latestItem.link !== lastItem.link) {  // lastItem が未定義または異なる場合
         lastItem = latestItem;  // lastItem を最新のアイテムに更新
@@ -74,9 +75,7 @@ async function checkRSS() {
                 latestItem.title,
                 latestItem.link,
                 latestItem.description,
-                latestItem.summary,
-                latestItem.duration,
-                latestItem.image
+                latestItem['itunes:summary'] || latestItem.summary
             )]
         });
     }
