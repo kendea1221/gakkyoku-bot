@@ -58,13 +58,14 @@ client.on(Events.GuildMemberAdd, member => {
 });
 
 //. RSS feed 
+let lastItem = null;  // グローバルに lastItem を宣言して、関数間で状態を保持
+
 async function checkRSS() {
     const feed = await parser.parseURL(process.env.PODCAST_RSS);
-    const latestItem = feed.items[0];
-    let lasteItem = null;
+    const latestItem = feed.items[0];  // 最新のアイテム
 
-    if (!lastItem || latestItem.link !== lastItem.link) {
-        lastItem = latestItem;
+    if (!lastItem || latestItem.link !== lastItem.link) {  // lastItem が未定義または異なる場合
+        lastItem = latestItem;  // lastItem を最新のアイテムに更新
 
         // RSSのデータを引数として渡す
         channel.get(process.env.RSS_SEND_CHANNNEL_ID).send({
