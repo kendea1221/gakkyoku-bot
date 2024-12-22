@@ -68,7 +68,7 @@ async function checkRSS() {
         lastItem = latestItem;  // lastItem を最新のアイテムに更新
 
         // RSSのデータを引数として渡す
-        channel.get(process.env.RSS_SEND_CHANNNEL_ID).send({
+        client.channels.cache.get(process.env.RSS_SEND_CHANNNEL_ID).send({
             content: rssEmbed.text,
             embeds: [rssEmbed.embed(
                 latestItem.title,
