@@ -10,7 +10,6 @@ const rssEmbed = require("./embeds/rss.js");
 const ping = require("./commands/ping.js");
 const inviteLink = require("./commands/inviteLink.js");
 const help = require("./commands/help.js");
-const latest = require("./commands/latest.js")
 
 const format = require("./format.js");
 
