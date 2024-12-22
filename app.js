@@ -75,7 +75,7 @@ async function checkRSS() {
                 latestItem.title,
                 latestItem.link,
                 latestItem.description,
-                latestItem['itunes:summary'] || latestItem.summary
+                latestItem['itunes:duration'] || latestItem.duration
             )]
         });
     }
