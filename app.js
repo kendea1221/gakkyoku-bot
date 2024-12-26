@@ -10,6 +10,7 @@ const rssEmbed = require("./embeds/rss.js");
 const ping = require("./commands/ping.js");
 const inviteLink = require("./commands/inviteLink.js");
 const help = require("./commands/help.js");
+const notice = require("./commands/notice.js")
 
 const format = require("./format.js");
 
@@ -111,6 +112,17 @@ client.on(Events.InteractionCreate, async interaction => {
     } else if (interaction.commandName === help.data.name) {
         try {
             await help.execute(interaction);
+        } catch (error) {
+            console.error(error);
+            if (interaction.replied || interaction.deferred){
+                await interaction.followUp({content: messageTextData.command.commandFail, ephemeral:true});
+            } else {
+                await interaction.reply({content: messageTextData.command.commandFail, ephemeral:true});
+            }
+        }
+    } else if (interaction.commandName === notice.data.name) {
+        try {
+            await notice.execute(interaction);
         } catch (error) {
             console.error(error);
             if (interaction.replied || interaction.deferred){

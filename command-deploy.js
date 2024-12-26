@@ -3,13 +3,15 @@ const ping = require("./commands/ping.js");
 const inviteLink = require("./commands/inviteLink.js")
 const messageTextData = require("./data/message-text-data.js");
 const help = require("./commands/help.js");
+const notice = require("./commands/notice.js")
 require('dotenv').config();
 
 //. command
 const commands = [
   ping.data.toJSON(),
   inviteLink.data.toJSON(),
-  help.data.toJSON()
+  help.data.toJSON(),
+  notice.data.toJSON()
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);

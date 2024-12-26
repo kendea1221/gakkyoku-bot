@@ -14,11 +14,25 @@ module.exports = {
     command: {
         commandSuc: "コマンド実行に成功しました！",
         commandFail: "コマンド実行中にエラーが発生しました！",
+        commandCannnotExecute: "コマンドを実行出来ません！",
         pingTitle: "ping",
         pingDescription:"Pongと返信します！",
         inviteLinkTitle: "invite-link",
         inviteLinkDescription:"このサーバーの招待リンクを送信します！",
+        quizTitle: "quiz",
+        quizDescription: "愛の楽曲工房に関するQuizができます。",
         helpTitle: "help",
-        helpDescription: "このBotの使い方を送信します！"
+        helpDescription: "このBotの使い方を送信します！",
+        noticeTitle: "notice",
+        noticeDescription: "お知らせを投稿することが出来ます※adminロールのみ実行可能"
+    },
+    string: {
+        noticeTitle: "通知のタイトル",
+        noticeDescription: "お知らせを通知することができます",
+        noticeContent: "通知の本文",
+        noticeRole: "メンションするロール",
+        noticeChannnel: "通知を送信するチャンネル",
+        noticeSuccess: "通知の設定が完了しました",
+        noticeCannnotFindChannel: "チャンネルが見つかりませんでした"
     }
 };
