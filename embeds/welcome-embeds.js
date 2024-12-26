@@ -4,8 +4,8 @@ module.exports = {
     text: "{0}さんようこそ！",
     embed: new EmbedBuilder()
     .setAuthor({
-        name: "愛の楽曲工房 PowerdedbyKenshiro",
-        iconURL: "https://cdn.discordapp.com/icons/1240929590545747989/b5549872d8a70e18ddad3a17390a7598.webp?size=96",
+        name: "愛の楽曲工房 PowerdedbyDiscordjs",
+        iconURL: "https://cdn.discordapp.com/avatars/1009241132925984868/f9784d9164e63baaaa905a7e5f102021.webp?size=100",
     })
     .setTitle("愛の楽曲工房 Discordサーバーにようこそ！")
     .setDescription("Discordサーバーに参加してくれてありがとうございます。\nまず、以下の操作を行ってください。")
@@ -22,7 +22,7 @@ module.exports = {
         },
         {
             name: "3.ロール付与",
-            value: "セキュリティーのため参加された方にはロールを付与させて頂いております。\n <#1282974855314149377>にてロールを受け取ってください！" ,
+            value: "セキュリティーのため参加された方にはロールを付与させて頂いております。\n <#1282974855314149377>にてロールを受け取ってください！ \n 2024/12/16 => 現在整備中です！！" ,
             inline: false
         }
     )
